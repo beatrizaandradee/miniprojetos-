@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conversor de Temperatura</title>
+  <style>
+    body { font-family: Arial; max-width: 320px; margin: 40px auto; }
+    input, select, button { width: 100%; padding: 10px; margin-top: 10px; box-sizing: border-box; }
+  </style>
+</head>
+<body>
+  <h2>Conversor de Temperatura</h2>
+  <input id="valor" type="number" placeholder="Valor">
+  <select id="de">
+    <option value="C">Celsius</option>
+    <option value="F">Fahrenheit</option>
+    <option value="K">Kelvin</option>
+  </select>
+  <select id="para">
+    <option value="F">Fahrenheit</option>
+    <option value="C">Celsius</option>
+    <option value="K">Kelvin</option>
+  </select>
+  <button onclick="converter()">Converter</button>
+  <h3 id="res"></h3>
+  <script>
+    function converter() {
+      const v = parseFloat(document.getElementById("valor").value);
+      const de = document.getElementById("de").value;
+      const para = document.getElementById("para").value;
+      if (isNaN(v)) return;
+      let c = de === "C" ? v : de === "F" ? (v - 32) * 5 / 9 : v - 273.15;
+      let r = para === "C" ? c : para === "F" ? c * 9 / 5 + 32 : c + 273.15;
+      document.getElementById("res").textContent = `${r.toFixed(2)} °${para}`;
+    }
+  </script>
+</body>
+</html>
