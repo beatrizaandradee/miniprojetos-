@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lista de Tarefas</title>
+  </head>
+  <body>
+    <a class="voltar" href="../">← Mini projetos</a>
+    <main class="card todo">
+      <h1>✅ Minhas tarefas</h1>
+      <form id="form" class="nova">
+        <input id="texto" placeholder="O que você precisa fazer?" maxlength="80" aria-label="Nova tarefa" autocomplete="off" />
+        <button>Adicionar</button>
+      </form>
+      <p id="erro" class="erro" role="alert"></p>
+      <div class="filtros" role="tablist">
+        <button data-filtro="todas" class="ativo">Todas</button>
+        <button data-filtro="pendentes">Pendentes</button>
+        <button data-filtro="feitas">Concluídas</button>
+      </div>
+      <ul id="lista" class="lista"></ul>
+      <footer class="rodape">
+        <span id="contador"></span>
+        <button id="limpar" class="link">Limpar concluídas</button>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

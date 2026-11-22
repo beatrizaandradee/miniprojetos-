@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mini projetos em HTML, CSS e JavaScript de Beatriz Almeida Andrade." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="shared.css" />
+    <title>Mini Projetos | Beatriz Almeida Andrade</title>
+    <style>
+      body { display: block; padding: 3rem 1.2rem; }
+      .topo { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; }
+      .topo span { color: var(--accent-2); font-weight: 600; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; }
+      .topo h1 { font-size: clamp(2rem, 6vw, 3rem); margin: .4rem 0; }
+      .topo p { color: var(--muted); margin: 0; }
+      .grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; max-width: 1100px; margin: auto; }
+      .item { display: flex; flex-direction: column; overflow: hidden; padding: 0; text-decoration: none; color: inherit; transition: transform .25s, border-color .25s; }
+      .item:hover { transform: translateY(-6px); border-color: var(--accent); }
+      .item img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: center; border-bottom: 1px solid var(--line); background: #0b0c1a; }
+      .item > div { padding: 1rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
+      .item h2 { margin: 0; font-size: 1.15rem; }
+      .item p { margin: 0; color: var(--muted); font-size: .9rem; flex: 1; }
+      .tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .5rem; }
+      .tags small { background: #2e2a63; color: #c9c2ff; border-radius: 99px; padding: .15rem .6rem; font-size: .72rem; }
+      footer { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 3rem; }
+      footer a { color: var(--accent-2); }
+    </style>
+  </head>
+  <body>
+    <header class="topo">
+      <span>Mini portfólio</span>
+      <h1>Mini Projetos</h1>
+      <p>Projetos curtos que fiz para praticar lógica de programação, manipulação do DOM e boas práticas de HTML, CSS e JavaScript.</p>
+    </header>
+
+    <main class="grade" id="grade"></main>
+
+    <footer>
+      Feito por <a href="https://github.com/beatrizaandradee" target="_blank" rel="noreferrer">Beatriz Almeida Andrade</a> · Engenharia de Software · PUC Minas
+    </footer>
+
+    <script>
+      // Para adicionar um mini projeto: crie a pasta e acrescente um item aqui
+      const projetos = [
+        { pasta: 'calculadora', nome: '🧮 Calculadora', desc: 'Operações básicas, porcentagem, vírgula decimal e suporte ao teclado.', tags: ['JavaScript', 'CSS Grid'] },
+        { pasta: 'lista-de-tarefas', nome: '✅ Lista de Tarefas', desc: 'Adicionar, concluir e apagar tarefas, com filtros e dados salvos no navegador.', tags: ['JavaScript', 'localStorage'] },
+        { pasta: 'gerador-de-senhas', nome: '🔐 Gerador de Senhas', desc: 'Senhas seguras com crypto.getRandomValues e medidor de força em bits.', tags: ['JavaScript', 'Web Crypto'] },
+        { pasta: 'jogo-da-velha', nome: '❌⭕ Jogo da Velha', desc: 'Modo 2 jogadores e modo contra o computador com o algoritmo Minimax.', tags: ['JavaScript', 'Algoritmos'] },
+        { pasta: 'pomodoro', nome: '🍅 Pomodoro', desc: 'Timer de foco com anel de progresso em SVG, pausas e contador de ciclos.', tags: ['JavaScript', 'SVG', 'Web Audio'] },
+      ]
+      document.getElementById('grade').innerHTML = projetos
+        .map(
+          (p) => `
+        <a class="card item" href="${p.pasta}/">
+          <img src="docs/${p.pasta}.png" alt="Tela do projeto ${p.nome}" loading="lazy" />
+          <div>
+            <h2>${p.nome}</h2>
+            <p>${p.desc}</p>
+            <div class="tags">${p.tags.map((t) => `<small>${t}</small>`).join('')}</div>
+          </div>
+        </a>`
+        )
+        .join('')
+    </script>
+  </body>
+</html>

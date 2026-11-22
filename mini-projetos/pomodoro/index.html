@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pomodoro</title>
+  </head>
+  <body>
+    <a class="voltar" href="../">← Mini projetos</a>
+    <main class="card pomo">
+      <h1>🍅 Pomodoro</h1>
+      <div class="modos" role="group" aria-label="Modo">
+        <button data-min="25" class="ativo">Foco</button>
+        <button data-min="5">Pausa curta</button>
+        <button data-min="15">Pausa longa</button>
+      </div>
+      <div class="relogio">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" class="trilho" />
+          <circle cx="60" cy="60" r="52" class="progresso" id="anel" />
+        </svg>
+        <time id="tempo">25:00</time>
+      </div>
+      <div class="botoes">
+        <button id="iniciar" class="principal">▶ Iniciar</button>
+        <button id="resetar" class="secundario" aria-label="Reiniciar">↺</button>
+      </div>
+      <p class="ciclos">Ciclos de foco hoje: <b id="ciclos">0</b></p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

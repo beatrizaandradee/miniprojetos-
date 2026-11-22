@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jogo da Velha</title>
+  </head>
+  <body>
+    <a class="voltar" href="../">← Mini projetos</a>
+    <main class="card velha">
+      <h1>❌⭕ Jogo da Velha</h1>
+      <div class="modos" role="group" aria-label="Modo de jogo">
+        <button data-modo="2p" class="ativo">2 jogadores</button>
+        <button data-modo="cpu">Contra o computador</button>
+      </div>
+      <p id="status" class="status" aria-live="polite"></p>
+      <div id="tabuleiro" class="tabuleiro"></div>
+      <div class="placar">
+        <span>❌ <b id="px">0</b></span>
+        <span>Empates <b id="pe">0</b></span>
+        <span>⭕ <b id="po">0</b></span>
+      </div>
+      <button id="reiniciar" class="reiniciar">Nova partida</button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

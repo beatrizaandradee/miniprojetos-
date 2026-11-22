@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gerador de Senhas</title>
+  </head>
+  <body>
+    <a class="voltar" href="../">← Mini projetos</a>
+    <main class="card senha">
+      <h1>🔐 Gerador de senhas</h1>
+      <div class="saida">
+        <output id="senha" aria-live="polite">—</output>
+        <button id="copiar" title="Copiar" aria-label="Copiar senha">📋</button>
+      </div>
+      <div class="forca"><div id="barra"></div></div>
+      <p id="forcaTexto" class="forca-texto"></p>
+
+      <label class="tamanho">Tamanho: <b id="tamanhoTexto">16</b>
+        <input id="tamanho" type="range" min="6" max="40" value="16" />
+      </label>
+      <div class="opcoes">
+        <label><input type="checkbox" id="maiusculas" checked /> Letras maiúsculas</label>
+        <label><input type="checkbox" id="minusculas" checked /> Letras minúsculas</label>
+        <label><input type="checkbox" id="numeros" checked /> Números</label>
+        <label><input type="checkbox" id="simbolos" /> Símbolos (!@#$)</label>
+      </div>
+      <button id="gerar" class="gerar">Gerar nova senha</button>
+      <p id="aviso" class="aviso" role="status"></p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
